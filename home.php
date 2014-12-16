@@ -16,11 +16,8 @@ if(isset($_POST['but_logout'])){
 <html>
 <head>
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap.min.css" />
     </head>
     <body>
-
-  </ul>
     <div class="container">
   <div class="jumbotron">
     <h1>Welcome Home <?php echo $_SESSION['uname'] ?></h1>      
