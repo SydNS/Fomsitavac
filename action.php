@@ -8,13 +8,12 @@ if(isset($_POST['but_submit'])){
 
     if ($uname != "" && $passwordlogin != ""){
 
-        $sql_query = "select count(*) as cntUser from user where username='$uname' and passwords='$passwordlogin'";
+        $sql_query = "select count(*) as cntUser from user where username='".$uname."' and password='".$passwordlogin."'";
         $result = mysqli_query($con,$sql_query);
-        
-        $row = mysqli_fetch_array($result);    
+        $row = mysqli_fetch_array($result);
 
         $count = $row['cntUser'];
-        // echo "$count";
+
         if($count > 0){
             $_SESSION['uname'] = $uname;
             header('Location: home.php');
@@ -22,8 +21,6 @@ if(isset($_POST['but_submit'])){
             echo "Invalid username and password";
         }
 
-    }else{
-        echo "Empty username and password";
     }
 
 }
@@ -55,5 +52,3 @@ if(isset($_POST['register'])){
     }
 
 }
-
-?>
