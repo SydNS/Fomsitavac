@@ -21,6 +21,8 @@ if(isset($_POST['but_submit'])){
             echo "Invalid username and password";
         }
 
+    }else{
+        echo "Empty username and password";
     }
 
 }
