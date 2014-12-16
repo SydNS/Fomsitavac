@@ -36,7 +36,6 @@ if(isset($_POST['register'])){
     $emailaddress = mysqli_real_escape_string($con,$_POST['email']);
 
     if ($uname != "" && $passwor != ""){
-
                 
         $sql = "INSERT INTO user (username, email, passwords)
         VALUES ('$uname', '$emailaddress', '$passwor')";
@@ -47,9 +46,7 @@ if(isset($_POST['register'])){
             header('Location: index.php');
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($con);
-        }
-
-        
+        }        
         mysqli_close($con);
 
     }
